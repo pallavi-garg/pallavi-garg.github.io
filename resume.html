@@ -91,19 +91,16 @@ layout: home
           <div class="col-3">
             <p class="m-0 text-end">
               {% if entry.startDate %}
-                {{ entry.startDate | slice: 0,4 }}
+                {{ entry.startDate}}
               {% endif %}
               {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
               -
               {% endif %}
               {% if entry.endDate %}
-                {% if entry.endDate != "Present" %}
-                  {{ entry.endDate | slice: 0,4 }}
-                {% else %}
-                  {{ entry.endDate }}
-                {% endif %}
+                  {{ entry.endDate}}
               {% endif %}
             </p>
+            <p class="m-0 text-end">{{ entry.gpa }}</p>
           </div>
         </div>
         {% endfor %}
@@ -130,28 +127,33 @@ layout: home
                   {% endfor %}
                 </ul>
               {% endif %}
+              <p class="mb-0"><i>Roles and Responsibilities</i></p>
+              {% if entry.responsibilities %}
+                <ul>
+                  {% for responsibility in entry.responsibilities %}
+                    <li>{{ responsibility }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
             <div class="col-3">
               <p class="m-0 text-end">
                 {% if entry.startDate %}
-                  {{ entry.startDate | slice: 0,4 }}
+                  {{ entry.startDate }}
                 {% endif %}
                 {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
                 -
                 {% endif %}
                 {% if entry.endDate %}
-                {% if entry.endDate != "Present" %}
-                  {{ entry.endDate | slice: 0,4 }}
-                {% else %}
-                  {{ entry.endDate }}
-                {% endif %}
+                {{ entry.endDate }}
               {% endif %}
               </p>
             </div>
           </div>
         {% endfor %}
-      </div>
     </div>
+  </div>
+
     {% endif %}
 
     {% if site.data.bio.volunteer %}
@@ -177,17 +179,13 @@ layout: home
             <div class="col-3">
               <p class="m-0 text-end">
                 {% if entry.startDate %}
-                  {{ entry.startDate | slice: 0,4 }}
+                  {{ entry.startDate}}
                 {% endif %}
                 {% if entry.startDate and entry.startDate != '' and entry.endDate and entry.endDate != '' %}
                 -
                 {% endif %}
                 {% if entry.endDate %}
-                  {% if entry.endDate != "Present" %}
-                    {{ entry.endDate | slice: 0,4 }}
-                  {% else %}
-                    {{ entry.endDate }}
-                  {% endif %}
+                  {{ entry.endDate }}
                 {% endif %}
               </p>
             </div>

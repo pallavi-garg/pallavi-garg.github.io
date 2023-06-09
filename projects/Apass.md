@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/pass/logo2.png
+image: img/pass/pass.jpg
 title: "PASS: Platform for Autonomous driving Security and Safety"
 date: "Feb 2023 - Jun 2023"
 position: 1
@@ -18,6 +18,9 @@ summary: "PASS is a testing and benchmarking platform for autonomous driving sys
 **PASS** is a command line interface tool with attack pipeline that loads the test scenario in [CARLA](https://carla.org/) simulator. For proof of concept, it contains a naive autonomous driving agent which controls the ego vehicle (car under test) during the simulation. It also supports integration with [Apollo](https://developer.apollo.auto/index.html).
 
 This was a group project with 4 members under [Prof. Alfred Chen](https://www.ics.uci.edu/~alfchen/).
+The project will be highlighted at [UCI MCS Capstone Projects Showcase 2023](https://mcs.ics.uci.edu/capstone-2023/). 
+
+[Have a look!!](https://mcs.ics.uci.edu/capstone_project/pass-platform-for-autonomous-driving-security-and-safety/)
 
 ## Attack Description
 Based on the [Shape Shifter](https://arxiv.org/abs/1804.05810) attack, we used the stop sign image to confuse the Faster R-CNN object detection algorithm.

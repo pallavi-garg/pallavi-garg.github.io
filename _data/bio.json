@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Pallavi Garg",
-    "label": "Graduate Student",
+    "label": "Graduate Student | Software Engineer",
     "picture": "https://github.com/pallavi-garg.png",
     "email": "pallavg1@uci.edu",
     "phone": "",
     "website": "https://pallavi-garg.github.io",
-    "summary": "I am studying for a Master of Computer Science at the University of California Irvine. I expect to graduate in December, 2023. I am a Software Engineer with 7 years of work experience.",
+    "summary": "I am studying for a Master of Computer Science at the University of California Irvine, expecting to graduate in December, 2023. My first full-time job was at Nagarro, where I worked as a software engineer for 7 years. Working at Nagarro was demanding and fun. I delivered quality work on time and have learned a lot about Agile processes, design patterns, and standards followed while developing code. I am quick at learning new concepts and possess the ability to work in a team.",
     "location": { "address": "", "postalCode": "92618", "city": "Irvine", "countryCode": "USA", "region": "California" },
     "profiles": [
       { "network": "github", "username": "pallavi-garg", "url": "https://github.com/pallavi-garg" },
@@ -33,85 +33,92 @@
   ],
   "education": [
     {
-      "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2018)",
-      "studyType": "B.S.",
-      "startDate": "2013-09-01",
-      "endDate": "Present",
+      "institution": "University of California, Irvine, CA",
+      "area": "Computer Science",
+      "studyType": "M.C.S.",
+      "startDate": "",
+      "endDate": "Expected Dec 2023",
+      "gpa": "GPA: 4.0",
+      "courses": [
+        "Compilers", 
+        "Text Processing",
+        "Advanced Programming and Problem Solving", 
+        "Operating Systems", 
+        "Introduction to Artificial Intelligence", 
+        "Machine Learning and Data Mining"
+      ]
+    },
+    {
+      "institution": "Guru Nanak Dev University, Gurdaspur, India",
+      "area": "Computer Science and Engineering",
+      "studyType": "Bachelor of Technology",
+      "startDate": "Aug 2011",
+      "endDate": "May 2015",
+      "gpa": "GPA: 9.56",
       "courses": [
       ]
     }
   ],
   "work": [
     {
-      "company": "UH Manoa Board of Publications",
-      "position": "Web Developer",
+      "company": "Nagarro Software Pvt. Ltd., Gurugram, India",
+      "position": "Staff Engineer",
       "website": "",
-      "startDate": "2015-08-01",
-      "endDate": "Present",
-      "summary": "Head of online presence for Ka Leo",
+      "startDate": "Jan 2015",
+      "endDate": "May 2022",
+      "summary": "Enhanced a commercial Lighting Design tool built with WPF and .Net technologies.",
       "highlights": [
-        "Maintain, update, and oversee official college newspaper website",
-        "Drive, design and build student-community projects for UH Manoa"
-      ]
-    },
-    {
-      "company": "UH Information Technology Services",
-      "position": "Help Desk Consultant",
-      "website": "http://www.hawaii.edu/its/",
-      "startDate": "2015-01-01",
-      "endDate": "2016-03-15",
-      "summary": "",
-      "highlights": [
-        "Troubleshoot software, hardware and networking issues over the phone",
-        "Answer phone and email responses to the ITS Help Desk"
+        "Improved responsiveness of application by moving image fetch logic to a background thread and designing a messaging framework update UI.",
+        "Reduced execution time of integration test cases by 30% by mocking SQL stored procedures and building an in-memory database.",
+        "Constructed a RESTful web service to automatically populate areas with devices as per building energy codes, making the process 20% faster.",
+        "Enhanced WPF TextBlock control to support formatted text and hyperlinks to reduce development time.",
+        "Wrote unit and functional test cases using frameworks such as MSTest and SpecFlow to improve code readability.",
+        "Organized “Know Your Software” and knowledge sharing sessions."
+      ],
+      "responsibilities":
+      [
+        "Follow Agile methodologies and participate in all project activities like project planning, task breakdown, effort estimation, retrospective meetings etc. alongside working with cross-functional teams",
+        "Offer insights and recommendations on technical design, architecture, and best practices.",
+        "Work on proof of concepts for new and high-risk features. Collaborate with architects and other stakeholders to design scalable and robust software solutions.",
+        "Work analyzing and resolving complex technical problems and challenges. Conduct root cause analysis and provide solutions or workarounds.",
+        "Perform code and functional reviews.",
+        "Make detailed design and Use Case diagrams for user stories using UML."
       ]
     }
   ],
   "volunteer": [
     {
-      "organization": "Center for Renewable Energy and Island Sustainability",
-      "website": "http://manoa.hawaii.edu/reis",
-      "position": "Software Developer",
-      "startDate": "2016-01-01",
-      "endDate": "Present",
-      "summary": "Lead developer for weather sensing project",
-      "highlights": [
-        "Design firmware for distributed weather sensor network",
-        "Maintain custom data collection and storage infrastructure"
-      ]
-    },
-    {
-      "organization": "",
+      "organization": "Nagarro Fresher Hiring and Training Group, Gurugram, India",
       "website": "",
-      "position": "Professional organization involvement",
-      "startDate": "",
-      "endDate": "",
+      "position": "Mentor",
+      "startDate": "Jan 2018",
+      "endDate": "Apr 2022",
       "summary": "",
       "highlights": [
-        "Chair, ACM Manoa, 2016-Present",
-        "Member, IEEE Student Branch, 2014-Present",
-        "Webmaster/IT Officer, IEEE Student Branch, UH Manoa, 2012-2013"
+        "Trained 9 junior software engineers in .Net technologies in-person and over Teams meetings.",
+        "Designed and graded coding assignments, providing feedback and discussion sessions."
+
       ]
     }
   ],
   "awards": [
     {
-      "title": "B+ Scholarship",
-      "date": "2013-Present",
-      "awarder": "State of Hawaii",
-      "summary": "Scholarships awarded to incoming freshmen and continuing students who complete a rigorous high school curriculum with a minimum overall GPA of 3.0 at a Hawai'i public school."
+      "title": "The Brightest Mind",
+      "date": "Dec 2021",
+      "awarder": "Nagarro Software Pvt. Ltd.",
+      "summary": "In recognition of outstanding performance and contribution, Nagarro honored me with this award."
     },
     {
-      "title": "First place",
-      "date": "2015",
-      "awarder": "University of Hawaii Micromouse Competition",
-      "summary": "My team won first place in 2015.  See my portfolio site for more details."
-    }
-  ],
-  "references": [
+      "title": "The A-Team",
+      "date": "Dec 2021",
+      "awarder": "Nagarro Software Pvt. Ltd.",
+      "summary": "Awarded (to entire team) for outstanding performance and exceptional teamwork."
+    },
     {
-      "name": "Available upon request"
+      "title": "Nagarro Excellence Award, Nagarro",
+      "date": "Jul 2019",
+      "awarder": "Nagarro Software Pvt. Ltd.",
+      "summary": "Awarded in recognition of outstanding performance and contribution."
     }
   ]
 }
