@@ -1,35 +1,34 @@
 {
   "basics": {
-    "name": "Molly Maluhia",
-    "label": "Student",
-    "picture": "https://github.com/kambergjohnson.png",
-    "email": "molly@hawaii.edu",
-    "phone": "808-333-4444",
-    "website": "https://mmaluhia.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2024.",
-    "location": { "address": "", "postalCode": "96822", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
+    "name": "Pallavi Garg",
+    "label": "Graduate Student",
+    "picture": "https://github.com/pallavi-garg.png",
+    "email": "pallavg1@uci.edu",
+    "phone": "",
+    "website": "https://pallavi-garg.github.io",
+    "summary": "I am studying for a Master of Computer Science at the University of California Irvine. I expect to graduate in December, 2023. I am a Software Engineer with 7 years of work experience.",
+    "location": { "address": "", "postalCode": "92618", "city": "Irvine", "countryCode": "USA", "region": "California" },
     "profiles": [
-      { "network": "github", "username": "mmaluhia", "url": "http://github.com/changeme" },
-      { "network": "linkedin", "username": "mollymaluhia", "url": "http://linkedin.com/in/changeme" },
-      { "network": "twitter", "username": "mollymal", "url": "http://twitter.com/changeme" },
-      { "network": "instagram", "username": "molly", "url": "http://instagram.com/changeme" }
+      { "network": "github", "username": "pallavi-garg", "url": "https://github.com/pallavi-garg" },
+      { "network": "linkedin", "username": "garg-pallavi", "url": "https://www.linkedin.com/in/garg-pallavi/" }
     ]
   },
   "interests": [
-    { "name": "Interactive media" },
-    { "name": "Neuromorphic Computing" },
-    { "name": "Quantum Computing" },
-    { "name": "Robotics" },
-    { "name": "3D Graphics" }
+    { "name": "Software Engineering" },
+    { "name": "Application Development" }
   ],
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "C", "C++", "Java", "Javascript", "Assembly", "Common Lisp" ]
+      "keywords": [ "C", "C++", "Python", "C#", "SQL" ]
     },
     {
-      "name": "Toolsets/OS",
-      "keywords": [ "MacOS", "Ubuntu", "Git/GitHub", "g++", "TI LaunchPad" ]
+      "name": "Technologies & Frameworks",
+      "keywords": [  "OOPS", "Design Patterns", "MSTest", "SpecFlow", "Entity Framework", "SAFe Agile", "Scrum"]
+    },
+    {
+      "name": "Tools",
+      "keywords": [ "Visual Studio", "SQL Server", "Git", "TFS", "Jenkins", "Docker", "CARLA", "Jira", "Miro whiteboard" ]
     }
   ],
   "education": [
