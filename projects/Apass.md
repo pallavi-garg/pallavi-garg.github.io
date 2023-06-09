@@ -4,6 +4,7 @@ type: project
 image: img/pass/logo2.png
 title: "PASS: Platform for Autonomous driving Security and Safety"
 date: "Feb 2023 - Jun 2023"
+position: 1
 published: true
 labels:
   - Artificial Intelligence
@@ -48,7 +49,7 @@ During simulation, PASS saves the video which are the images taken by the ego ve
 #### Unmodified Stop Sign 
 
 <div class="ratio ratio-16x9 my-4" style="width:600px">
-  <iframe src="https://www.youtube.com/embed/2iBRKXl2VQI" 
+  <iframe src="https://www.youtube.com/embed/vX0IF9A4LFM" 
           title="Unmodified Stop Sign" 
           allowfullscreen>
   </iframe>
@@ -57,7 +58,7 @@ During simulation, PASS saves the video which are the images taken by the ego ve
 #### Shape Shifted Stop Sign - Successful Attack
 
 <div class="ratio ratio-16x9 my-4" style="width:600px">
-  <iframe src="https://www.youtube.com/embed/iahh7K8WfXM" 
+  <iframe src="https://www.youtube.com/embed/3v5yPcTPRXA" 
           title="Shape Shifted Stop Sign" 
           allowfullscreen>
   </iframe>
@@ -66,7 +67,7 @@ During simulation, PASS saves the video which are the images taken by the ego ve
 #### Unmodified Stop Sign with heavy rain
 
 <div class="ratio ratio-16x9 my-4" style="width:600px">
-  <iframe src="https://www.youtube.com/embed/DlWwM_GT-tk" 
+  <iframe src="https://www.youtube.com/embed/aOBv5vcB5JQ" 
           title="Unmodified Stop Sign with rain" 
           allowfullscreen>
   </iframe>
@@ -75,7 +76,7 @@ During simulation, PASS saves the video which are the images taken by the ego ve
 #### Shape Shifted Stop Sign with rain - Successful Attack
 
 <div class="ratio ratio-16x9 my-4" style="width:600px">
-  <iframe src="https://www.youtube.com/embed/s1cQl50ie6Q" 
+  <iframe src="https://www.youtube.com/embed/iZxnEp-wr20" 
           title="Unmodified Stop Sign with rain" 
           allowfullscreen>
   </iframe>
@@ -84,7 +85,7 @@ During simulation, PASS saves the video which are the images taken by the ego ve
 #### Shape Shifted Stop Sign - Failed Attack
 
 <div class="ratio ratio-16x9 my-4" style="width:600px">
-  <iframe src="https://www.youtube.com/embed/P332ktKh7Ck" 
+  <iframe src="https://www.youtube.com/embed/0yFZj8WMohI" 
           title="Unmodified Stop Sign with rain" 
           allowfullscreen>
   </iframe>

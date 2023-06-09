@@ -4,6 +4,7 @@ type: project
 image: img/tsp/logo.png
 title: "Traveling Salesman Problem Solver"
 date: "Nov 2022 - Dec 2022"
+position: 3
 published: true
 labels:
   - C++

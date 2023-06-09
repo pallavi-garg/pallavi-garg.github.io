@@ -5,6 +5,7 @@ image: img/compiler/compiler.png
 title: "SSA Based Compiler for SMPL"
 date: "Jan 2023 - Apr 2023"
 published: true
+position: 2
 labels:
   - Recursive Descent Parser
   - Static Single Assignment
