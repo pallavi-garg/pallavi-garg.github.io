@@ -11,7 +11,7 @@ labels:
   - Static Single Assignment
   - Compiler
   - Python
-summary: "A compiler for creating Static Single-Assignment intermediate representation for the SMPL language while perfoming copy propagation, common subexpression elimination, removal of redundant load and store operations, and dead code elimination optimizations."
+summary: "The compiler for the SMPL language generates a Static Single-Assignment (SSA) intermediate representation. It incorporates several optimizations, including copy propagation, common subexpression elimination, removal of redundant load and store operations, and dead code elimination. These optimizations enhance the efficiency and performance of the compiled code."
 ---
 
 ## About SMPL
@@ -34,7 +34,7 @@ The first step involved generating SSA-based IR of the given input program while
  - For this, I first built a recursive-descent parser for a subset of the language.
  - While parsing, the copy propagation and common subexpression elimination optimizations are applied on the fly. 
  - To achieve this, I built a dominator tree during parsing and before converting any statement into its equivalent instruction, I first check if:
-    - common subexpression elimination optimization can be perfomed using a *search data structure*
+    - common subexpression elimination optimization can be performed using a *search data structure*
     - copy propagation optimization can be applied
   - Based on above decisions, instruction is generated and added into the basic block and search data structure.
   - The basic blocks are maintained in memory in a *control flow graph (CFG) structure*.

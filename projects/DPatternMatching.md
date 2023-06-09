@@ -10,7 +10,7 @@ labels:
   - C++
   - Algorithms
   - Pattern Matching
-summary: "Analysis of various algorithms used for exact pattern matching"
+summary: "Analysis of various algorithms used for exact pattern matching. By evaluating their performance and considering factors such as time complexity and pattern length, the project aimed to provide insights into selecting the most suitable algorithm for efficient and accurate pattern matching tasks."
 ---
 
 ## Problem Statement

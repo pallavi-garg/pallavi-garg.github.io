@@ -11,7 +11,7 @@ labels:
   - Artificial Intelligence
   - Algorithms
   - Heuristics
-summary: "Implemented Branch and Bound Depth First Search (heuristic) and Simulated Annealing Stochastic Local Search algorithms to find optimal path."
+summary: "Implemented two algorithms, Branch and Bound Depth First Search (DFS) with a heuristic and Simulated Annealing Stochastic Local Search, to find the optimal path. These algorithms utilize different strategies to efficiently explore the search space and find the best solution. The Branch and Bound DFS algorithm incorporates a heuristic function to guide the search, while Simulated Annealing employs a stochastic approach to overcome local optima and explore the solution space more effectively. By leveraging these algorithms, I aimed to achieve optimal pathfinding results."
 ---
 
 ## Problem Statement

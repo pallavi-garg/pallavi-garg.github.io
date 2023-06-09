@@ -6,7 +6,7 @@
     "email": "pallavg1@uci.edu",
     "phone": "",
     "website": "https://pallavi-garg.github.io",
-    "summary": "I am studying for a Master of Computer Science at the University of California Irvine, expecting to graduate in December, 2023. My first full-time job was at Nagarro, where I worked as a software engineer for 7 years. Working at Nagarro was demanding and fun. I delivered quality work on time and have learned a lot about Agile processes, design patterns, and standards followed while developing code. I am quick at learning new concepts and possess the ability to work in a team.",
+    "summary": "I am a Master of Computer Science candidate at the University of California Irvine, graduating in December 2023. With 7 years of experience as a software engineer at Nagarro, I have successfully delivered high-quality work on time while gaining expertise in Agile processes, design patterns, and coding standards. I possess a quick learning ability and thrive in collaborative team environments.",
     "location": { "address": "", "postalCode": "92618", "city": "Irvine", "countryCode": "USA", "region": "California" },
     "profiles": [
       { "network": "github", "username": "pallavi-garg", "url": "https://github.com/pallavi-garg" },
@@ -15,7 +15,8 @@
   },
   "interests": [
     { "name": "Software Engineering" },
-    { "name": "Application Development" }
+    { "name": "API Development" },
+    { "name": "Compilers" }
   ],
   "skills": [
     {
