@@ -11,7 +11,7 @@ labels:
   - Artificial Intelligence
   - Algorithms
   - Heuristics
-summary: "Implemented two algorithms, Branch and Bound Depth First Search (DFS) with a heuristic and Simulated Annealing Stochastic Local Search, to find the optimal path. These algorithms utilize different strategies to efficiently explore the search space and find the best solution. The Branch and Bound DFS algorithm incorporates a heuristic function to guide the search, while Simulated Annealing employs a stochastic approach to overcome local optima and explore the solution space more effectively. By leveraging these algorithms, I aimed to achieve optimal pathfinding results."
+summary: "Implemented two algorithms, Branch and Bound Depth First Search (DFS) with a heuristic and Simulated Annealing Stochastic Local Search, to find the optimal path. These algorithms utilize different strategies to efficiently explore the search space and find the best solution. The Branch and Bound DFS algorithm incorporates a heuristic function to guide the search, while Simulated Annealing employs a stochastic approach to overcome local optima and explore the solution space more effectively. By leveraging these algorithms, I aimed to achieve optimal path finding results."
 ---
 
 ## Problem Statement
@@ -45,4 +45,5 @@ In all the these algorithms, I used minimum spanning tree logic to estimate the 
 
 Click [here](https://github.com/pallavi-garg/Travelling-Salesman-Problem#observations-and-results) for detailed comparisons.
 
-[Source Code](https://github.com/pallavi-garg/Travelling-Salesman-Problem).
+## Source Code
+Source Code is present [here](https://github.com/pallavi-garg/Travelling-Salesman-Problem).

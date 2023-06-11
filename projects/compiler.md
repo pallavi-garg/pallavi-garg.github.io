@@ -56,8 +56,10 @@ After adding array operations, I added support for user-defined functions with f
  3. Global variables are not accessible from within the functions
  4. Variable names are unique, i.e. there are no conflicting names between global and local variables
 
+#### Source Code
+Source Code is present [here](https://github.com/pallavi-garg/smpl-opt-compiler)
 
-#### Example
+#### Examples
 
 Below is just one example. Please checkout [this](https://github.com/pallavi-garg/smpl-opt-compiler#some-examples) for more examples.
 

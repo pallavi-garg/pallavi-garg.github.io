@@ -71,5 +71,5 @@ Overall, the performance of these algorithms depends on the characteristics of t
 problem being solved. It is important to consider the properties of the text and pattern when
 selecting an algorithm for string matching
 
-
-[Source Code](https://github.com/pallavi-garg/PatternMatching).
+## Source Code
+Source Code is present [here](https://github.com/pallavi-garg/PatternMatching).
