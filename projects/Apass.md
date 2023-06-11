@@ -84,12 +84,3 @@ During simulation, PASS saves the video which are the images taken by the ego ve
           allowfullscreen>
   </iframe>
 </div>
-
-#### Shape Shifted Stop Sign - Failed Attack
-
-<div class="ratio ratio-16x9 my-4" style="width:600px">
-  <iframe src="https://www.youtube.com/embed/0yFZj8WMohI" 
-          title="Unmodified Stop Sign with rain" 
-          allowfullscreen>
-  </iframe>
-</div>
