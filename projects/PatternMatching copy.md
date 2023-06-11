@@ -4,7 +4,7 @@ type: project
 image: img/patternmatching/logo.jpg
 title: "Exact Pattern Matching"
 date: "May 2023"
-position: 4
+position: 5
 published: true
 labels:
   - C++

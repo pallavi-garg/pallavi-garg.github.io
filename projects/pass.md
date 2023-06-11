@@ -42,7 +42,7 @@ We built the defense pipeline in which the ego vehicle uses the Faster R-CNN alg
 
 ## Observations
 
-1. The attack was successful (the ego vehicle could not detect the stop sign) in 10 out of 15 weather conditions for all speeds.
+1. The attack was successful (the ego vehicle could not detect the stop sign) in 10 out of 15 weather conditions.
 2. Apollo does not use camera-based logic for stop sign detection. It uses HDMap location information, hence the attack was never successful.
 
 ## Video Outputs
