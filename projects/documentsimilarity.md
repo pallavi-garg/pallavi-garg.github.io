@@ -68,16 +68,16 @@ Minhash approximation provides a fairly **good estimation** of Jaccard similarit
 
 Below graph shows the similarity percentage for brute force Jaccard Similarity calculator and Minhashing technique. In all the graphs, extreme ends represents the sets are completely disjoint and completely same. **Accuracy is increased as we increase sketch size**.
 
-<img class="img-fluid" src="https://github.com/pallavi-garg/documentsimilarity/blob/main/results/images/accuracy_100.png" >
+<img class="img-fluid" src="../img/documentsimilarity/accuracy_100.png" >
 
-<img class="img-fluid" src="https://github.com/pallavi-garg/documentsimilarity/blob/main/results/images/accuracy_50.png" >
+<img class="img-fluid" src="../img/documentsimilarity/accuracy_50.png" >
 
-<img class="img-fluid" src="https://github.com/pallavi-garg/documentsimilarity/blob/main/results/images/accuracy_10.png" >
+<img class="img-fluid" src="../img/documentsimilarity/accuracy_10.png" >
 
 
-Below is the runtime comparison. At the dip position, all the sketch vectors are cached and now only 100 comparisons are done to calculate similarity.
+##### Below is the runtime comparison. At the dip position, all the sketch vectors are cached and now only 100 comparisons are done to calculate similarity.
 
-<img class="img-fluid" src="https://github.com/pallavi-garg/documentsimilarity/blob/main/results/images/runtime_100.png" >
+<img class="img-fluid" src="../img/documentsimilarity/runtime_100.png" >
 
 Initially, minhash algorithm takes alot of time to generate the sketches, but once they are cached, the runtime reduces alot.
 In case of brute force approach, every document is compared with everyother and number of comparisons are not reduced. This is because, in minhash, after caching, only integer comparisons equal to sketch size are performed instead of comparing all the shingles.
