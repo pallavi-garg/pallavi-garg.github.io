@@ -40,6 +40,12 @@ We built the defense pipeline in which the ego vehicle uses the Faster R-CNN alg
     - Camera Pinhole Model and HDMap to calculate the vehicle distance from stop sign.
 4. Adjusted the parameters of [PID controller](https://github.com/m-lundberg/simple-pid) to support control speed of 10 mph, 15 mph, 20 mph, and 25 mph.
 
+#### Ego vehicle behavior
+
+<img class="img-fluid" src="../img/pass/ad.png" height=450 width=450>
+
+The vehicle starts at speed 0 mph and reaches a max speed of say 25 mph. Using the stop sign location from HDMap, the minimum safe distance to stop is calculated. If stop sign is detected withtin this distance, only then deceleration is applied. 
+
 ## Observations
 
 1. The attack was successful (the ego vehicle could not detect the stop sign) in 10 out of 15 weather conditions.
