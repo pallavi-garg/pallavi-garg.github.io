@@ -5,4 +5,7 @@ For details on this professional portfolio, please see https://techfolios.github
 
 To run:
 
+```
+bundle install
 bundle exec jekyll serve
+```

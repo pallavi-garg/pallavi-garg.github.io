@@ -6,10 +6,10 @@
 
 /* See https://getbootstrap.com/docs/5.2/customize/css-variables/#root-variables for variables to override. */
 :root {
-  --tf-blue1: #076db3;
+  --tf-blue1: #004b7c;
   --tf-blue2: #1b6fa9;
   --tf-blue3: #2f8ed0;
-  --tf-blue4: #bde3f0;
+  --tf-blue4: #f6faff;
   --bs-font-sans-serif: "Open Sans", sans-serif;
   --bs-link-color: var(--tf-blue1);
   --tf-pill-bg: var(--tf-blue3);
@@ -22,7 +22,6 @@
 
 h1,h2,h3,h4,h5 {
   color: var(--tf-blue1);
-  font-family: Rubik;
 }
 
 /* Format social media icons */
@@ -47,4 +46,9 @@ a {
   border-color: var(--tf-blue1);
   border-style: solid;
   border-width: 1px;
+}
+
+.card-footer {
+  background-color: var(--bs-white);
+  border-top: none
 }
