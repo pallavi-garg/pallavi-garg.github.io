@@ -1,10 +1,10 @@
 ---
 layout: project
 type: project
-image: img/patternmatching/logo.jpg
+image: img/patternmatching/logo.png
 title: "Exact Pattern Matching"
 date: "May 2023"
-position: 5
+position: 6
 published: true
 labels:
   - C++

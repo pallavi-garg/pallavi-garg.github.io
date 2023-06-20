@@ -12,6 +12,7 @@ labels:
   - CARLA Simulator
   - Apollo
   - Team Project
+  - Python
 summary: "PASS is a testing and benchmarking platform for autonomous driving systems. It includes its own autonomous driving implementation and supports integration with Apollo. With in-built attacks like camera-based STOP sign detection, it helps evaluate the robustness of these systems in the CARLA simulator."
 ---
 

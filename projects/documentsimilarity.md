@@ -4,7 +4,7 @@ type: project
 image: img/documentsimilarity/logo.png
 title: "Quantifying Document Similarity"
 date: "June 2023"
-position: 4
+position: 5
 published: true
 labels:
   - C++
