@@ -11,7 +11,7 @@ labels:
   - Algorithms
   - Pattern Matching
   - Jaccard Similarity
-summary: "Measured document similarity using Jaccard Similarity and min hashing technique."
+summary: "Measure document similarity using Jaccard Similarity and min hashing technique. Represent the document as set of shingles for minhash calculation. Compare the performance with different metrics of the algorithms. Finally compare it with brute force approach."
 ---
 
 ### Problem Statement
@@ -25,7 +25,7 @@ The Jaccard Similarity Coefficient is a measure that determines the similarity b
 
 ```
 
-J(set1 , set2) = Intersecton(set1, set2) / Union(set1, set2)
+    J(set1 , set2) = Intersecton(set1, set2) / Union(set1, set2)
 
 ```
 When dealing with large volumes of data, such as comparing articles across millions of documents, directly calculating the raw Jaccard Similarity for all document pairs becomes prohibitively time-consuming. However, by leveraging the MinHash technique, we can approximate the Jaccard Similarity and achieve a significant speedup. MinHash allows us to create concise document signatures and estimate similarity efficiently, making it practical to process vast amounts of data within a reasonable timeframe. 
@@ -43,8 +43,8 @@ Now I create a sketch vector of length equal to the number of hash functions to 
 
 ```
 
-sketch_vector[1] = min(h1(t1), h1(t2), h1(t3))
-sketch_vector[2] = min(h2(t1), h2(t2), h2(t3))
+    sketch_vector[1] = min(h1(t1), h1(t2), h1(t3))
+    sketch_vector[2] = min(h2(t1), h2(t2), h2(t3))
 
 ```
 
@@ -66,7 +66,7 @@ And to calculate the Jaccard Similarity, I simply count the number of positions 
 #### Observations
 Minhash approximation provides a fairly **good estimation** of Jaccard similarity with **much less runtime once data is cached**.
 
-Below graph shows the similarity percentage for brute force Jaccard Similarity calculator and Minhashing technique. In all the graphs, extreme ends represents the sets are completely disjoint and completely same. **Accuracy is increased as we increase sketch size**.
+Below graph shows the similarity percentage for brute force Jaccard Similarity calculator and Minhashing technique. In all the graphs, extreme ends represents the sets are completely disjoint and completely same. **Accuracy is increased as we increase sketch size**. Below graphs show the impact on accuracy as we decrease the sketch size.
 
 <img class="img-fluid" src="../img/documentsimilarity/accuracy_100.png" >
 
