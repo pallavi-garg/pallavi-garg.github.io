@@ -3,7 +3,7 @@ layout: project
 type: project
 image: img/tcpserver/logo.png
 title: "Simple Client-Server | TCP & UDP"
-date: "Jun 2023 - Present"
+date: "Jun 2023"
 published: true
 position: 7
 labels:
@@ -25,7 +25,7 @@ The aim of this project is to learn basics of socket programming utilizing **TCP
 * After establishing the connection, the client sends messages using fixed-length byte streams.
 * On the server side, for now the process is forked into a child process. The child process maintains an open connection with the client until it receives all the data. Once all the data is received, the connection is closed, and the child process terminates.
 * To handle multiple clients, multiple child processes are created, with a limit of 8 clients. Each child process is responsible for handling the communication with a specific client. This allows the server to handle concurrent connections from multiple clients, up to the specified limit of 8.
-* I am currently working on removing child process creation and using `select()` calls to handle multiple clients.
+* I am currently working on trying out `select()` calls and multithreading to handle multiple clients instead of forking the process.
 
 ## UDP
 

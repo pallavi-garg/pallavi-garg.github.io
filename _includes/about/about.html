@@ -8,9 +8,11 @@
         <h1 class="display-4 text-center">{{ site.data.bio.basics.name }}</h1>
         <p class="lead text-center">{{ site.data.bio.basics.label }}</p>
         <p class="lead">{{ site.data.bio.basics.summary }}</p>
+        <p class="lead">{{ site.data.bio.basics.summary2 }}</p> 
+        <p class="lead">{{ site.data.bio.basics.contactme }}</p> 
         <hr class="my-4">
         <p class="lead m-0">
-          Interests:
+          <b>Interests:</b>
           {% for interest in site.data.bio.interests %}
           {{ interest.name }}{% if forloop.last != true %}, {% endif %}
           {% endfor %}
