@@ -18,8 +18,12 @@
   "interests": [
     { "name": "Software Engineering" },
     { "name": "API Development" },
-    { "name": "Compilers" },
-    { "name": "AI powered tools" }
+    { "name": "AI powered tools" },
+    { "name": "Backend"}
+  ],
+  "certifications" :
+  [
+    {"name" : "AWS Certified Cloud Practitioner (CLF-C01 July 2023)"}
   ],
   "skills": [
     {
@@ -70,13 +74,14 @@
       "website": "",
       "startDate": "Jan 2015",
       "endDate": "May 2022",
-      "summary": "Enhanced a commercial Lighting Design tool built with WPF and .Net technologies.",
+      "summary": "Enhanced a commercial Lighting Design tool built with C#, WPF, and .Net 4.5+ within Agile SDLC.",
       "highlights": [
-        "Improved responsiveness of application by moving image fetch logic to a background thread and designing a messaging framework update UI.",
-        "Reduced execution time of integration test cases by 30% by mocking SQL stored procedures and building an in-memory database.",
-        "Constructed a RESTful web service to automatically populate areas with devices as per building energy codes, making the process 20% faster.",
+        "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the design tool and iOS application using TCP connection over USB.",
+        "Developed a responsive mechanism in desktop tool for fetching images from the cloud by implementing messaging framework, lowering release dependency for product engraving style updates.",
+        "Achieved 30% reduction in execution time of integration test cases by building an in-memory database with mocked SQL stored procedures and transactions.",
+        "Constructed a RESTful API (C#) and updated the desktop tool to automatically populate areas with devices as per building energy codes, making the process 25% faster.",
         "Enhanced WPF TextBlock control to support formatted text and hyperlinks to reduce development time.",
-        "Wrote unit and functional test cases using frameworks such as MSTest and SpecFlow to improve code readability.",
+        "Increased code coverage by 20% by writing unit, integration, and functional test cases.",
         "Organized “Know Your Software” and knowledge sharing sessions."
       ],
       "responsibilities":
@@ -99,9 +104,8 @@
       "endDate": "Apr 2022",
       "summary": "",
       "highlights": [
-        "Trained 9 junior software engineers in .Net technologies in-person and over Teams meetings.",
-        "Designed and graded coding assignments, providing feedback and discussion sessions."
-
+        "Trained 9 junior software engineers in OOPs and best practices over in-person and Teams meetings.",
+        "Designed and graded 5 coding assignments for each trainee, providing feedback and discussion sessions."
       ]
     }
   ],
