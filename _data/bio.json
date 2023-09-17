@@ -74,15 +74,19 @@
       "website": "",
       "startDate": "Jan 2015",
       "endDate": "May 2022",
-      "summary": "Enhanced a commercial Lighting Design tool built with C#, WPF, and .Net 4.5+ within Agile SDLC.",
+      "summary": "Enhanced a commercial Lighting Design tool (WPF, C#, SQL, .Net 4.5+) in a team of 50+, following TDD, Scrum and Agile SDLC.      ",
       "highlights": [
-        "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the design tool and iOS application using TCP connection over USB.",
-        "Developed a responsive mechanism in desktop tool for fetching images from the cloud by implementing messaging framework, lowering release dependency for product engraving style updates.",
-        "Achieved 30% reduction in execution time of integration test cases by building an in-memory database with mocked SQL stored procedures and transactions.",
-        "Constructed a RESTful API (C#) and updated the desktop tool to automatically populate areas with devices as per building energy codes, making the process 25% faster.",
+        "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the desktop and iOS application using TCP connection over USB.",
+        "Devised a responsive mechanism for loading images from the cloud by implementing messaging queues, lowering release dependency for product engraving style updates.",
+        "Optimized integration test cases by 80% by creating an in-memory database and mocking SQL procedures",
+        "Constructed a RESTful Web API (C#) and automated device population in alignment with building energy codes. This automation helped in saving 25% of system engineer’s time per job.",
+        "Delivered 2x performance boost in bulk operations by adding global transactions in ADO.Net data access layer.",
         "Enhanced WPF TextBlock control to support formatted text and hyperlinks to reduce development time.",
-        "Increased code coverage by 20% by writing unit, integration, and functional test cases.",
-        "Organized “Know Your Software” and knowledge sharing sessions."
+        "Extended WPF dropdown control to enable search functionality of domain objects at view and  view model layer.",
+        "Acted as design & code reviewer, test auditor within cross-functional teams.",
+        "Organized “Know Your Software” and knowledge sharing sessions.",
+        "Wrote extensive bench test plans for 50+ features and worked with business analysts to refine the requirements.",
+        "Ensured more than 80% code coverage by implementing MSTest and SpecFlow (functional) test cases."
       ],
       "responsibilities":
       [
@@ -91,7 +95,8 @@
         "Work on proof of concepts for new and high-risk features. Collaborate with architects and other stakeholders to design scalable and robust software solutions.",
         "Work analyzing and resolving complex technical problems and challenges. Conduct root cause analysis and provide solutions or workarounds.",
         "Perform code and functional reviews.",
-        "Make detailed design and Use Case diagrams for user stories using UML."
+        "Make detailed design and Use Case diagrams for user stories using UML. The diagrams included Flow Charts, Sequence Diagrams, Activity Diagrams, and Class Diagrams using PlantUML.",
+        "Acted as offshore team lead."
       ]
     }
   ],
