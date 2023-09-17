@@ -23,7 +23,7 @@
   ],
   "certifications" :
   [
-    {"name" : "AWS Certified Cloud Practitioner (CLF-C01 July 2023)"}
+    {"name" : "AWS Certified Cloud Practitioner (CLF-C01 July 2023) - <a href=\"https://www.credly.com/badges/9e2e57ae-6076-4874-a9b7-4a15e619bb1a\" target=\"_blank\"> <i>link </i></a>"}
   ],
   "skills": [
     {
@@ -78,7 +78,7 @@
       "highlights": [
         "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the desktop and iOS application using TCP connection over USB.",
         "Devised a responsive mechanism for loading images from the cloud by implementing messaging queues, lowering release dependency for product engraving style updates.",
-        "Optimized integration test cases by 80% by creating an in-memory database and mocking SQL procedures",
+        "Optimized integration test cases by 80% by creating an in-memory database and mocking SQL procedures and transactions.",
         "Constructed a RESTful Web API (C#) and automated device population in alignment with building energy codes. This automation helped in saving 25% of system engineer’s time per job.",
         "Delivered 2x performance boost in bulk operations by adding global transactions in ADO.Net data access layer.",
         "Enhanced WPF TextBlock control to support formatted text and hyperlinks to reduce development time.",
@@ -90,7 +90,7 @@
       ],
       "responsibilities":
       [
-        "Follow Agile methodologies and participate in all project activities like project planning, task breakdown, effort estimation, retrospective meetings etc. alongside working with cross-functional teams",
+        "Follow Agile methodologies and participate in all project activities like project planning, task breakdown, effort estimation, retrospective meetings etc. alongside working with cross-functional teams.",
         "Offer insights and recommendations on technical design, architecture, and best practices.",
         "Work on proof of concepts for new and high-risk features. Collaborate with architects and other stakeholders to design scalable and robust software solutions.",
         "Work analyzing and resolving complex technical problems and challenges. Conduct root cause analysis and provide solutions or workarounds.",
