@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Pallavi Garg",
-    "label": "Graduate Student | Software Engineer",
+    "label": "Software Engineer | Graduate Student",
     "picture": "https://github.com/pallavi-garg.png",
     "email": "pallavg1@uci.edu",
     "phone": "",
@@ -9,7 +9,7 @@
     "summary": "Hello! I am currently pursuing a Master of Computer Science degree at the University of California Irvine, expected to graduate in December 2023. I began my professional journey at <a href=\"https://www.nagarro.com/en\">Nagarro</a> and consistently delivered high-quality work within deadlines for 7 years. Proficient in agile processes, design patterns, and coding standards, I excel in languages like C++, Python, and C#. I have a strong aptitude for learning and thrive in collaborative team environments.",
     "summary2": "Outside of coding, I nurture a collection of over 100 house plants and enjoy leisurely walks. Driven by curiosity, I seek to expand my horizons through various projects. I am eager to contribute to groundbreaking advancements and make a meaningful impact.",
     "contactme": "Let's connect and collaborate! Feel free to contact me at <a href=\"mailto:pallavg1@uci.edu\">pallavg1@uci.edu</a>. Looking forward to connecting with you!",
-    "location": { "address": "", "postalCode": "92618", "city": "Irvine", "countryCode": "USA", "region": "California" },
+    "location": { "address": "", "postalCode": "92126", "city": "San Diego", "countryCode": "USA", "region": "California" },
     "profiles": [
       { "network": "github", "username": "pallavi-garg", "url": "https://github.com/pallavi-garg" },
       { "network": "linkedin", "username": "garg-pallavi", "url": "https://www.linkedin.com/in/garg-pallavi/" }
@@ -19,7 +19,8 @@
     { "name": "Software Engineering" },
     { "name": "API Development" },
     { "name": "AI powered tools" },
-    { "name": "Backend"}
+    { "name": "Backend"},
+    { "name": "Databases"}
   ],
   "certifications" :
   [
@@ -28,15 +29,15 @@
   "skills": [
     {
       "name": "Languages and Frameworks",
-      "keywords": [ "C", "C++", "Python", "C#", "SQL" ]
+      "keywords": [ "C", "C++", "Python", "C#", "SQL", "Windows Presentation Foundation (WPF)", "Javascript" ]
     },
     {
       "name": "Technologies & Frameworks",
-      "keywords": [  "OOPS", "Design Patterns", "MSTest", "SpecFlow", "Entity Framework", "SAFe Agile", "Scrum"]
+      "keywords": [  "OOPS", "Design Patterns", "MSTest", "SpecFlow", "MVC", "REST", "MVVM", "Entity Framework", "SAFe Agile", "Scrum", "SDLC"]
     },
     {
       "name": "Tools",
-      "keywords": [ "Visual Studio", "SQL Server", "Git", "TFS", "Jenkins", "Docker", "CARLA", "Jira", "Miro whiteboard" ]
+      "keywords": [ "Visual Studio", "SQL Server", "Postgres", "MongoDB", "Cassandra", "Git", "TFS", "Jenkins", "Docker", "CARLA", "Jira", "Miro whiteboard" ]
     }
   ],
   "education": [
@@ -44,16 +45,19 @@
       "institution": "University of California, Irvine, CA",
       "area": "Computer Science",
       "studyType": "M.C.S.",
-      "startDate": "",
-      "endDate": "Expected Dec 2023",
+      "startDate": "Sep 2022",
+      "endDate": "Dec 2023",
       "gpa": "GPA: 4.0",
       "courses": [
+        "Computer Architecture",
         "Compilers", 
-        "Text Processing",
-        "Advanced Programming and Problem Solving", 
         "Operating Systems", 
+        "Parallel and Distributed Computing",
+        "Advanced Programming and Problem Solving", 
         "Introduction to Artificial Intelligence", 
-        "Machine Learning and Data Mining"
+        "Machine Learning and Data Mining",
+        "Text Processing",
+        "Big Data Management"
       ]
     },
     {
@@ -76,17 +80,18 @@
       "endDate": "May 2022",
       "summary": "Enhanced a commercial Lighting Design tool (WPF, C#, SQL, .Net 4.5+) in a team of 50+, following TDD, Scrum and Agile SDLC.      ",
       "highlights": [
-        "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the desktop and iOS application using TCP connection over USB.",
+        "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the desktop and mobile application using TCP connection over USB.",
         "Devised a responsive mechanism for loading images from the cloud by implementing messaging queues, lowering release dependency for product engraving style updates.",
         "Optimized integration test cases by 80% by creating an in-memory database and mocking SQL procedures and transactions.",
         "Constructed a RESTful Web API (C#) and automated device population in alignment with building energy codes. This automation helped in saving 25% of system engineer’s time per job.",
         "Delivered 2x performance boost in bulk operations by adding global transactions in ADO.Net data access layer.",
         "Enhanced WPF TextBlock control to support formatted text and hyperlinks to reduce development time.",
-        "Extended WPF dropdown control to enable search functionality of domain objects at view and  view model layer.",
-        "Acted as design & code reviewer, test auditor within cross-functional teams.",
-        "Organized “Know Your Software” and knowledge sharing sessions.",
         "Wrote extensive bench test plans for 50+ features and worked with business analysts to refine the requirements.",
-        "Ensured more than 80% code coverage by implementing MSTest and SpecFlow (functional) test cases."
+        "Ensured more than 80% code coverage by implementing MSTest and SpecFlow (functional) test cases.",
+        "Implemented asynchronous communication among 3 microservices using AzureBus.",
+        "Acted as design & code reviewer, test auditor within cross-functional teams.",
+        "Triaged and resolved production issues, dealing with large-scale software design challenges, and avoiding performance bottlenecks.",
+        "Organized “Know Your Software” and knowledge sharing sessions."
       ],
       "responsibilities":
       [
@@ -102,7 +107,7 @@
   ],
   "volunteer": [
     {
-      "organization": "Nagarro Fresher Hiring and Training Group, Gurugram, India",
+      "organization": "Nagarro's Fresher Hiring and Training Group, Gurugram, India",
       "website": "",
       "position": "Mentor",
       "startDate": "Jan 2018",
