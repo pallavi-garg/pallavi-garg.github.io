@@ -39,7 +39,7 @@ MinHash is a fast approximation algorithm for the Jaccard Similarity Coefficient
 At first, I parse the document into set of shingles (a string of 8 consecutive characters) from the document. For example, if document has "A rose is a rose.", then shingles are "A rose i", " rose is", "rose is ", and so on. Later these shingles are hashed into integers.
 
 #### Minhash Signatures | Fingerprinting
-Now I create a sketch vector of length equal to the number of hash functions to use. In my code I have used 100 for this. So the sketch vector size is 200. The higher this number is, higher accuracy will be achieved. Using the hash function, each shingle is converted into integer representation. The minimum of the hash values (for all shingles) per hash function is saved as the signature of the document for that hash function in the sketch vector. Let's say we have h1, h2 as two hash functions, and set s1 has t1, t2, t3 shigles in it. Sketch vector (minhash signature of s1) will have following data:
+Now I create a sketch vector of length equal to the number of hash functions to use. In my code I have used 100 for this. So the sketch vector size is 100. The higher this number is, higher accuracy will be achieved. Using the hash function, each shingle is converted into integer representation. The minimum of the hash values (for all shingles) per hash function is saved as the signature of the document for that hash function in the sketch vector. Let's say we have h1, h2 as two hash functions, and set s1 has t1, t2, t3 shigles in it. Sketch vector (minhash signature of s1) will have following data:
 
 ```
 
@@ -48,7 +48,7 @@ Now I create a sketch vector of length equal to the number of hash functions to 
 
 ```
 
-Using, above the signature for each document is calculated one.
+Using above, the signature for each document is calculated once.
 And to calculate the Jaccard Similarity, I simply count the number of positions with same value in sketch vectors of both documents.
 
 #### Experiment setup
