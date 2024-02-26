@@ -37,7 +37,7 @@
     },
     {
       "name": "Tools",
-      "keywords": [ "Visual Studio", "SQL Server", "Postgres", "MongoDB", "Cassandra", "Git", "TFS", "Jenkins", "Docker", "CARLA", "Jira", "Miro whiteboard" ]
+      "keywords": [ "Visual Studio", "SQL Server", "Postgres", "MongoDB", "Cassandra", "CI/CD", "Git", "TFS", "Jenkins", "Docker", "CARLA", "Jira", "Miro whiteboard" ]
     }
   ],
   "education": [
@@ -73,6 +73,17 @@
   ],
   "work": [
     {
+      "company": "University of Califonia, Irvine, USA",
+      "position": "System Integration Engineer",
+      "website": "",
+      "startDate": "Feb 2024",
+      "endDate": "Present",
+      "highlights": [
+        "Developed Python FastAPI to establish GitHub login in Vue.js application using github identity and OAuth2.0.",
+        "Implemented distributed backend built using Docker, Python to facilitate Defcon auto CTF."
+      ]
+    },
+    {
       "company": "Nagarro Software Pvt. Ltd., Gurugram, India",
       "position": "Staff Engineer",
       "website": "",
@@ -82,7 +93,7 @@
       "highlights": [
         "Awarded “The Brightest Mind” for 50% reduction in human-effort in device configuration by implementing a framework to sync data between the desktop and mobile application using TCP connection over USB.",
         "Devised a responsive mechanism for loading images from the cloud by implementing messaging queues, lowering release dependency for product engraving style updates.",
-        "Optimized integration test cases by 80% by creating an in-memory database and mocking SQL procedures and transactions.",
+        "Optimized integration test cases by 80% by enabling parallel processing and mocking SQL databases for MSTest.",
         "Constructed a RESTful Web API (C#) and automated device population in alignment with building energy codes. This automation helped in saving 25% of system engineer’s time per job.",
         "Delivered 2x performance boost in bulk operations by adding global transactions in ADO.Net data access layer.",
         "Enhanced WPF TextBlock control to support formatted text and hyperlinks to reduce development time.",

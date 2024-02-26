@@ -142,8 +142,9 @@ layout: home
                   {% endfor %}
                 </ul>
               {% endif %}
-              <p class="mb-0"><i>Roles and Responsibilities</i></p>
+              
               {% if entry.responsibilities %}
+              <p class="mb-0"><i>Roles and Responsibilities</i></p>
                 <ul>
                   {% for responsibility in entry.responsibilities %}
                     <li>{{ responsibility }}</li>
