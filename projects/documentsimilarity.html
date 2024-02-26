@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Quantifying Document Similarity | Pallavi Garg">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/pallavi-garg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pallavi Garg">
+    <meta property="og:url" content="https://pallavi-garg.github.io/projects/documentsimilarity.html">
+    <meta property="og:title" content="Quantifying Document Similarity | Pallavi Garg">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/pallavi-garg.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/skyblue.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Quantifying Document Similarity | Pallavi Garg</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Pallavi Garg</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Quantifying Document Similarity</h1>
+ <h3 id="problem-statement">Problem Statement</h3>
+<p>Given two documents, find the similarity between them. The problem does not involve extracting any semantic meaning of the documents but simply looking at whether they contain the same words.</p>
+
+<h3 id="solution-approach--viewing-documents-as-sets">Solution Approach | Viewing Documents as Sets</h3>
+<p>When documents are represented as sets of words, the Jaccard Similarity is employed to gauge the extent of overlap between them. However, this approach may not yield optimal results when comparing documents that share similar concepts but are otherwise entirely distinct. It is more effective in scenarios where there is an anticipation of substantial word similarity between the documents, such as plagiarism detection among news articles from the same source or identifying similar choices based on a movie watch list.</p>
+
+<h4 id="jaccard-similarity">Jaccard Similarity</h4>
+<p>The Jaccard Similarity Coefficient is a measure that determines the similarity between two finite sets. It is calculated by dividing the size of their intersection by the size of their union. This coefficient provides an intuitive way to quantify similarity, and its value ranges between 0 and 1. When the two sets are completely distinct (disjoint), the coefficient is 0, indicating no similarity. On the other hand, if the sets are identical, the coefficient is 1, indicating complete similarity.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    J(set1 , set2) = Intersecton(set1, set2) / Union(set1, set2)
+
+</code></pre></div></div>
+<p>When dealing with large volumes of data, such as comparing articles across millions of documents, directly calculating the raw Jaccard Similarity for all document pairs becomes prohibitively time-consuming. However, by leveraging the MinHash technique, we can approximate the Jaccard Similarity and achieve a significant speedup. MinHash allows us to create concise document signatures and estimate similarity efficiently, making it practical to process vast amounts of data within a reasonable timeframe.</p>
+
+<h4 id="minhash-algorithm">Minhash Algorithm</h4>
+<p>MinHash is a fast approximation algorithm for the Jaccard Similarity Coefficient. Rather than repeatedly computing unions and intersections, it creates MinHash Signatures for each set. These signatures are used to estimate the coefficient, providing an efficient approach without the need for extensive set operations.</p>
+
+<h3 id="solution">Solution</h3>
+
+<h5 id="shingling">Shingling</h5>
+<p>At first, I parse the document into set of shingles (a string of 8 consecutive characters) from the document. For example, if document has “A rose is a rose.”, then shingles are “A rose i”, “ rose is”, “rose is “, and so on. Later these shingles are hashed into integers.</p>
+
+<h4 id="minhash-signatures--fingerprinting">Minhash Signatures | Fingerprinting</h4>
+<p>Now I create a sketch vector of length equal to the number of hash functions to use. In my code I have used 100 for this. So the sketch vector size is 100. The higher this number is, higher accuracy will be achieved. Using the hash function, each shingle is converted into integer representation. The minimum of the hash values (for all shingles) per hash function is saved as the signature of the document for that hash function in the sketch vector. Let’s say we have h1, h2 as two hash functions, and set s1 has t1, t2, t3 shigles in it. Sketch vector (minhash signature of s1) will have following data:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    sketch_vector[1] = min(h1(t1), h1(t2), h1(t3))
+    sketch_vector[2] = min(h2(t1), h2(t2), h2(t3))
+
+</code></pre></div></div>
+
+<p>Using above, the signature for each document is calculated once.
+And to calculate the Jaccard Similarity, I simply count the number of positions with same value in sketch vectors of both documents.</p>
+
+<h4 id="experiment-setup">Experiment setup</h4>
+
+<h5 id="test-case-generation">Test case generation</h5>
+<ol>
+  <li>Generate two disjoin sets say <code class="language-plaintext highlighter-rouge">set1</code>, <code class="language-plaintext highlighter-rouge">set2</code> of same size (say 100000 lines of 8-20 length characters).</li>
+  <li>Remove <code class="language-plaintext highlighter-rouge">n</code> elements from <code class="language-plaintext highlighter-rouge">set2</code>.</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">n</code> elements from <code class="language-plaintext highlighter-rouge">set1</code> into <code class="language-plaintext highlighter-rouge">set2</code>.</li>
+  <li>Repeat step 2 and 3 until both <code class="language-plaintext highlighter-rouge">set1</code> and <code class="language-plaintext highlighter-rouge">set2</code> becomes same.</li>
+</ol>
+
+<h5 id="running-the-test">Running the test</h5>
+<ol>
+  <li>Above logic generated 12 documents/sets. Run the code such that we find find the test results for all pairs of sets/documents.</li>
+  <li>Both minhash and brute force algorithm is provided with same shingles of size 8.</li>
+</ol>
+
+<h4 id="observations">Observations</h4>
+<p>Minhash approximation provides a fairly <strong>good estimation</strong> of Jaccard similarity with <strong>much less runtime once data is cached</strong>.</p>
+
+<p>Below graph shows the similarity percentage for brute force Jaccard Similarity calculator and Minhashing technique. In all the graphs, extreme ends represents the sets are completely disjoint and completely same. <strong>Accuracy is increased as we increase sketch size</strong>. Below graphs show the impact on accuracy as we decrease the sketch size.</p>
+
+<p><img class="img-fluid" src="../img/documentsimilarity/accuracy_100.png" /></p>
+
+<p><img class="img-fluid" src="../img/documentsimilarity/accuracy_50.png" /></p>
+
+<p><img class="img-fluid" src="../img/documentsimilarity/accuracy_10.png" /></p>
+
+<h5 id="below-is-the-runtime-comparison-at-the-dip-position-all-the-sketch-vectors-are-cached-and-now-only-100-comparisons-are-done-to-calculate-similarity">Below is the runtime comparison. At the dip position, all the sketch vectors are cached and now only 100 comparisons are done to calculate similarity.</h5>
+
+<p><img class="img-fluid" src="../img/documentsimilarity/runtime_100.png" /></p>
+
+<p>Initially, minhash algorithm takes alot of time to generate the sketches, but once they are cached, the runtime reduces alot.
+In case of brute force approach, every document is compared with everyother and number of comparisons are not reduced. This is because, in minhash, after caching, only integer comparisons equal to sketch size are performed instead of comparing all the shingles.</p>
+
+<h4 id="why-does-it-work">Why does it work?</h4>
+
+<p>To grasp the reasoning behind this hashing method, let’s imagine a random permutation function called <code class="language-plaintext highlighter-rouge">pi</code> that rearranges the elements in a set. By applying the same <code class="language-plaintext highlighter-rouge">pi</code> to two different sets and selecting the minimum elements from each set, we can examine the probability of these chosen elements being the same. This probability is directly related to the number of common elements (intersection) divided by the size of the union of the two sets. As this approach provides a probabilistic estimation rather than an exact value, employing more of these permutation functions can enhance the accuracy. In my implementation, this is accomplished by utilizing <strong>multiple hash functions</strong> to simulate <code class="language-plaintext highlighter-rouge">pi</code>.</p>
+
+<h3 id="click-here-for-source-code"><a href="https://github.com/pallavi-garg/documentsimilarity">Click here for Source Code!</a></h3>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios | Last Updated: February 2024</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Traveling Salesman Problem Solver | Pallavi Garg">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/pallavi-garg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pallavi Garg">
+    <meta property="og:url" content="https://pallavi-garg.github.io/projects/tsp.html">
+    <meta property="og:title" content="Traveling Salesman Problem Solver | Pallavi Garg">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/pallavi-garg.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/skyblue.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Traveling Salesman Problem Solver | Pallavi Garg</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Pallavi Garg</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Traveling Salesman Problem Solver</h1>
+ <h2 id="problem-statement">Problem Statement</h2>
+<p>Traveling salesman’s problem is to find the optimal path for visiting the given locations and their
+distances. The optimal path is the path with minimum cost. The salesman comes back to the city from
+where he started the path. For our project, we have following assumptions:</p>
+<ol>
+  <li>Each city is connected to every other city.</li>
+  <li>Distance or cost of going from one city to another is the same as coming back from that city to
+the initial city i.e., the cost of going from city A to B is the same as going from city B to city A.</li>
+</ol>
+
+<h2 id="solution-approach">Solution Approach</h2>
+<p>For the solution, I am using three algorithms:</p>
+
+<h4 id="branch-and-bound-depth-first-search-algorithm">Branch and Bound Depth First Search algorithm</h4>
+<p>This algorithm performs exhaustive search on the given cities, and finds the optimal path. The algorithm selects a starting city and iterates over other cities using DFS technique and an initial best cost is provided to the algorithm. In each iteration it moves to the city only if adding it to the path does not increase the given cost. If it does, that city is not included in the current path and the path if that city was included is pruned meaning is ignored and not processed. If a path with less cost is found then the best cost is updated to this value.</p>
+
+<h4 id="simulated-annealing-stochastic-local-search">Simulated Annealing Stochastic Local Search</h4>
+<p>This algorithm creates a random path initially and then swaps two cities at a time to get an optimal path. Each time a path is found, its cost is compared with the previously found path. If the cost is reduced, then that path is kept and used in later iterations for cost comparison.</p>
+
+<h4 id="dynamic-programming-based-naive-approach">Dynamic Programming based naive approach</h4>
+<p>In this approach, an intial city is chosen and then next city with mininum cost is added to the path, and then next city with minimum cost is chosen and so on.</p>
+
+<p><strong>Heuristic Logic</strong>: 
+In all the these algorithms, I used minimum spanning tree logic to estimate the path cost whenever required. For this, I used Kruskul’s algorithm.</p>
+
+<h2 id="observations">Observations</h2>
+
+<ul>
+  <li>
+    <p>If ran to completion (without any time limits), bnb finds the optimal path. Solution with dynamic programming also gives the optimal path but the catch is it is alot slower than bnb where number of cities goes beyond 23.</p>
+  </li>
+  <li>
+    <p>The Simulated Annealing algorithm, deviates from the optimal path in some cases and returns the sub-optimal path because of randomness and no exhaustive search. The benefit is that it returns the good sub-optimal solution in very little time as compared to the time taken by the BnB algorithm for getting the optimal path.</p>
+  </li>
+</ul>
+
+<p>Click <a href="https://github.com/pallavi-garg/Travelling-Salesman-Problem#observations-and-results">here</a> for detailed comparisons.</p>
+
+<h2 id="source-code">Source Code</h2>
+<p>Source Code is present <a href="https://github.com/pallavi-garg/Travelling-Salesman-Problem">here</a>.</p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios | Last Updated: February 2024</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

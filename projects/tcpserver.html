@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Simple Client-Server | TCP &amp; UDP | Pallavi Garg">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/pallavi-garg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pallavi Garg">
+    <meta property="og:url" content="https://pallavi-garg.github.io/projects/tcpserver.html">
+    <meta property="og:title" content="Simple Client-Server | TCP &amp; UDP | Pallavi Garg">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/pallavi-garg.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/skyblue.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>Simple Client-Server | TCP & UDP | Pallavi Garg</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Pallavi Garg</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">Simple Client-Server | TCP & UDP</h1>
+ <h2 id="objective">Objective</h2>
+
+<p>The aim of this project is to learn basics of socket programming utilizing <strong>TCP</strong> and <strong>UDP</strong>. For this, I developed two basic servers using TCP and UDP protocols that offer identical functionality and possess the ability to handle multiple clients concurrently. Additionally, built separate clients for each server, where every client transmits a substantial (larger than the buffer size) message to its server. Upon receiving the data, the server displays it on the screen.</p>
+
+<p>(This is work in progress project!)</p>
+
+<h2 id="tcp">TCP</h2>
+
+<ul>
+  <li>After establishing the connection, the client sends messages using fixed-length byte streams.</li>
+  <li>On the server side, for now the process is forked into a child process. The child process maintains an open connection with the client until it receives all the data. Once all the data is received, the connection is closed, and the child process terminates.</li>
+  <li>To handle multiple clients, multiple child processes are created, with a limit of 8 clients. Each child process is responsible for handling the communication with a specific client. This allows the server to handle concurrent connections from multiple clients, up to the specified limit of 8.</li>
+  <li>I am currently working on trying out <code class="language-plaintext highlighter-rouge">select()</code> calls and multithreading to handle multiple clients instead of forking the process.</li>
+</ul>
+
+<h2 id="udp">UDP</h2>
+
+<ul>
+  <li>Since UDP is not connection-oriented, for each message received on the server, a separate child process is created. This child process is responsible for handling the specific message received on that particular socket.</li>
+  <li>The child process displays the last message received on the corresponding socket, as there is no inherent connection or sequencing of messages in UDP. This approach allows the server to handle multiple messages concurrently and display the most recent message received on the socket.</li>
+</ul>
+
+<h4 id="source-code">Source Code</h4>
+
+<p>This project is WIP. Source Code is present <a href="https://github.com/pallavi-garg/filetransfer">here</a>.</p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios | Last Updated: February 2024</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

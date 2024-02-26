@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="PASS: Platform for Autonomous driving Security and Safety | Pallavi Garg">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/pallavi-garg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pallavi Garg">
+    <meta property="og:url" content="https://pallavi-garg.github.io/projects/pass.html">
+    <meta property="og:title" content="PASS: Platform for Autonomous driving Security and Safety | Pallavi Garg">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/pallavi-garg.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/skyblue.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>PASS: Platform for Autonomous driving Security and Safety | Pallavi Garg</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Pallavi Garg</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">PASS: Platform for Autonomous driving Security and Safety</h1>
+ <p><strong>PASS</strong> is a command line interface tool with attack pipeline that loads the test scenario in <a href="https://carla.org/">CARLA</a> simulator. For proof of concept, it contains a naive autonomous driving agent which controls the ego vehicle (car under test) during the simulation. It also supports integration with <a href="https://developer.apollo.auto/index.html">Apollo</a>.</p>
+
+<p>This was a group project with 4 members under <a href="https://www.ics.uci.edu/~alfchen/">Prof. Alfred Chen</a>.
+The project was highlighted at <a href="https://mcs.ics.uci.edu/capstone-2023/">UCI MCS Capstone Projects Showcase 2023</a>.</p>
+
+<h2 id="attack-description">Attack Description</h2>
+
+<div class="row row-cols-1 row-cols-sm-2">
+  <div class="col col-4 col-sm-4 col-md-2">
+    <img class="img-fluid" src="../img/pass/stopsign.png" />
+  </div>
+  <p class="col col-sm-8 col-md-10">
+    Based on the <a href="https://arxiv.org/abs/1804.05810">Shape Shifter</a> attack, we used the stop sign image to confuse the Faster R-CNN object detection algorithm.
+  </p>
+</div>
+
+<h2 id="defense-description">Defense Description</h2>
+
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col col-12 col-md-6 col-lg-4">
+    <img class="img-fluid p-2" src="../img/pass/ad.png" />
+  </div>
+  <p class="col col-md-6 col-lg-8">
+    We built the defense pipeline in which the ego vehicle uses the Faster R-CNN algorithm to detect the objects. Based on the current position, speed, and safe deceleration we calculate the minimum distance required to stop the vehicle. If the stop sign is detected within this distance, then the vehicle stops as it approaches the stop sign.<br />
+
+    The vehicle starts at speed 0 mph and reaches a max speed of say 25 mph. Using the stop sign location from HDMap, the minimum safe distance to stop is calculated. If stop sign is detected withtin this distance, only then deceleration is applied.
+  </p>
+</div>
+
+<h2 id="my-contributions-to-the-project">My contributions to the project</h2>
+
+<ol>
+  <li>Created a customized CARLA simulator by modifying Stop Sign Unreal Engine uasset. This was done to add texture on the stop sign using CARLA’s PythonAPI. By default, CARLA’s API cannot edit the stop sign element.</li>
+  <li>Added API for the attack pipeline where the desired stop sign image was applied to the stop sign in the simulation.</li>
+  <li>Implemented the defense pipeline for the attack using:
+    <ul>
+      <li>Faster R-CNN model as the object detection algorithm.</li>
+      <li>Camera Pinhole Model and HDMap to calculate the vehicle distance from stop sign.</li>
+    </ul>
+  </li>
+  <li>Adjusted the parameters of <a href="https://github.com/m-lundberg/simple-pid">PID controller</a> to support control speed of 10 mph, 15 mph, 20 mph, and 25 mph.</li>
+</ol>
+
+<h2 id="observations">Observations</h2>
+
+<ol>
+  <li>The attack was successful (the ego vehicle could not detect the stop sign) in 10 out of 15 weather conditions.</li>
+  <li>Apollo does not use camera-based logic for stop sign detection. It uses HDMap location information, hence the attack was never successful.</li>
+</ol>
+
+<h2 id="video-outputs">Video Outputs</h2>
+
+<p>During simulation, PASS saves the video which are the images taken by the ego vehicle camera and are modified in the defense pipeline with the bounding boxes detected by the Faster R-CNN model.</p>
+
+<div class="row row-cols-1 row-cols-md-2 align-items-end">
+  <div class="col col-md-6 h-100">
+
+    <h4 id="unmodified-stop-sign">Unmodified Stop Sign</h4>
+    <div class="ratio ratio-16x9 my-4">
+  <iframe src="https://www.youtube.com/embed/vX0IF9A4LFM" title="Unmodified Stop Sign" allowfullscreen="">
+  </iframe>
+</div>
+  </div>
+  <div class="col col-md-6 h-100">
+
+    <h4 id="shape-shifted-stop-sign---successful-attack">Shape Shifted Stop Sign - Successful Attack</h4>
+    <div class="ratio ratio-16x9 my-4">
+  <iframe src="https://www.youtube.com/embed/3v5yPcTPRXA" title="Shape Shifted Stop Sign" allowfullscreen="">
+  </iframe>
+</div>
+  </div>
+  <div class="col col-md-6">
+
+    <h4 id="unmodified-stop-sign-with-heavy-rain">Unmodified Stop Sign with heavy rain</h4>
+    <div class="ratio ratio-16x9 my-4">
+  <iframe src="https://www.youtube.com/embed/aOBv5vcB5JQ" title="Unmodified Stop Sign with rain" allowfullscreen="">
+  </iframe>
+</div>
+  </div>
+  <div class="col col-md-6">
+
+    <h4 id="shape-shifted-stop-sign-with-rain---successful-attack">Shape Shifted Stop Sign with rain - Successful Attack</h4>
+    <div class="ratio ratio-16x9 my-4">
+  <iframe src="https://www.youtube.com/embed/iZxnEp-wr20" title="Unmodified Stop Sign with rain" allowfullscreen="">
+  </iframe>
+</div>
+  </div>
+</div>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios | Last Updated: February 2024</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

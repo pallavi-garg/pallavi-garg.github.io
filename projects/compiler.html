@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="SSA Based Compiler for SMPL | Pallavi Garg">
+    <meta name="description" content="">
+    <meta name="image" content="https://github.com/pallavi-garg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pallavi Garg">
+    <meta property="og:url" content="https://pallavi-garg.github.io/projects/compiler.html">
+    <meta property="og:title" content="SSA Based Compiler for SMPL | Pallavi Garg">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://github.com/pallavi-garg.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/techfolio-theme/skyblue.css">
+    <link rel="stylesheet" type="text/css" href="/css/rouge/github.css">
+    <!-- Load MathJax if 'mathjax: true' is found in your _config.yml. -->
+    
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+
+    <title>SSA Based Compiler for SMPL | Pallavi Garg</title>
+  </head>
+  <body>
+  <header class="navbar navbar-expand navbar-light bg-light bg-gradient border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Pallavi Garg</a>
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/resume.html">Resume</a>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container py-4">
+  <h1 class="display-4">SSA Based Compiler for SMPL</h1>
+ <h2 id="about-smpl">About SMPL</h2>
+
+<p><a href="https://github.com/pallavi-garg/smpl-opt-compiler/blob/master/grammars/smpl_grammar.txt">SMPL</a> is a small programming language used in academia and can be parsed using an LL(1) parser. It consists of integers, if-else statement, while loop, arrays (single and multidimensional), and functions (user- and pre-defined).</p>
+
+<h2 id="aim">Aim</h2>
+
+<p>The aim of this project is to implement an optimizing compiler of SMPL language from scratch.</p>
+
+<p>The compiler generates an <a href="https://en.wikipedia.org/wiki/Static_single-assignment_form">SSA-based IR</a>, and performs optimizations such as copy propagation, common subexpression elimination, removal of redundant load and store operations in first pass. As as second pass, dead code elimination should be done to reduce the size of IR.</p>
+
+<h2 id="development-process">Development Process</h2>
+
+<p>The implementation was divided into multiple steps as described below:</p>
+
+<h4 id="generating-ssa-based-ir">Generating SSA-based IR</h4>
+<p>The first step involved generating SSA-based IR of the given input program while leaving out while loop, arrays and functions. Optimizations such as copy propagation and common subexpression elimination are performed on the fly while generating the IR.</p>
+
+<ul>
+  <li>For this, I first built a recursive-descent parser for a subset of the language.</li>
+  <li>While parsing, the copy propagation and common subexpression elimination optimizations are applied on the fly.</li>
+  <li>To achieve this, I built a dominator tree during parsing and before converting any statement into its equivalent instruction, I first check if:
+    <ul>
+      <li>common subexpression elimination optimization can be performed using a <em>search data structure</em></li>
+      <li>copy propagation optimization can be applied</li>
+    </ul>
+  </li>
+  <li>Based on above decisions, instruction is generated and added into the basic block and search data structure.</li>
+  <li>The basic blocks are maintained in memory in a <em>control flow graph (CFG) structure</em>.</li>
+</ul>
+
+<h4 id="output-visualization">Output Visualization</h4>
+<p>The output of the previous step is visualized using <a href="http://www.webgraphviz.com/">Graphviz</a>. For this step, I simply walk the CFG and transpile it into DOT language for visualization.</p>
+
+<h4 id="supporting-while-loop-and-arrays">Supporting While loop and Arrays</h4>
+
+<ol>
+  <li>Next the compiler was extended to support while loops. Here, the major challenge was to perform common sub-expression elimination for <strong>phi instructions</strong> once the whole loop was finished.</li>
+  <li>Later on, I included array load and store operations. These operations also undergo common subexpression elimination to eliminate any redundant loads. One important point here is to include <strong>kill instructions</strong> every time a store is performed. This is important as it ensures that the correct value is used every time an array element is accessed.</li>
+  <li>Also in case of a store instruction is added inside a while loop, then there could be cases to add a kill statement in the join block of loop. This is done to load the updated array values.</li>
+</ol>
+
+<h4 id="user-defined-functions">User-defined Functions</h4>
+<p>After adding array operations, I added support for user-defined functions with following assumptions:</p>
+
+<ol>
+  <li>Arrays cannot be passed to the functions</li>
+  <li>Functions can only return a scalar</li>
+  <li>Global variables are not accessible from within the functions</li>
+  <li>Variable names are unique, i.e. there are no conflicting names between global and local variables</li>
+</ol>
+
+<h4 id="source-code">Source Code</h4>
+<p>Source Code is present <a href="https://github.com/pallavi-garg/smpl-opt-compiler">here</a></p>
+
+<h4 id="examples">Examples</h4>
+
+<p>Below is just one example. Please checkout <a href="https://github.com/pallavi-garg/smpl-opt-compiler#some-examples">this</a> for more examples.</p>
+
+<p>SMPL Code</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> main 
+ var i; 
+ array[10] arr; 
+ {
+     while i &lt; 10 do 
+         if i &lt; 10 then
+             let arr[i] &lt;- i + 1; 
+             let i &lt;-i + 1 
+         fi;
+     od; 
+     call OutputNum(arr[i]);
+     call OutputNum(arr[i])
+ }.
+</code></pre></div></div>
+
+<p>Generated IR (Visualized in Graphviz)</p>
+
+<p><img class="img-fluid" src="../img/compiler/arrays.png" /></p>
+
+<p>Source Code: <a href="https://github.com/pallavi-garg/smpl-opt-compiler">SSA Based Optimized Compiler for SMPL</a></p>
+
+</div>
+
+<footer class="navbar navbar-expand navbar-light bg-light bg-gradient border-top">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <small><a class="nav-link" href="https://techfolios.github.io">Made with Techfolios | Last Updated: February 2024</a></small>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
